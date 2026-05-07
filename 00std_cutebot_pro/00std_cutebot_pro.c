@@ -7,30 +7,28 @@
 #include "map_led.h"
 
 
-/*
-sources:
-https://github.com/elecfreaks/pxt-Cutebot-Pro/blob/master/main.ts
-I2C:
-same a Cutebot
-*/
 
 
 
 int main(void) 
 
 {
+    // initialization setup
     i2c_init();
     sonar_init();
     led_init();
-    map_led_location(2,2);
-    delay_ms(1000);
     map_init();
+    
+    // light up the (0,0) cell on the map to show that we are at the base
+    map_led_location(0,0);
+
+    delay_ms(1000);
 
     clear_leds();
 
     while(1)
     {
-        // button to start exploration
+        
         printf("Exploring grid...\n");
     
         clear_leds();
@@ -39,7 +37,6 @@ int main(void)
         int dist = (int)get_sonar_distance_cm();
         printf("Distance: %d cm\n", dist);
         delay_ms(1000);
-//        delay_ms(10000);
     }  
     
 }
