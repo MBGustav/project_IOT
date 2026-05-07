@@ -234,6 +234,8 @@ bool check_obstacle_ahead(void)
                 {
                     // printf("Obstacle detected at cell (%d, %d). \n\
                             // Stopping exploration.\n", robot_pos_x, robot_pos_y);
+                            
+                    map_led_location(robot_pos_x,robot_pos_y);
                     return_to_base();
                     return;
                 }
@@ -254,6 +256,7 @@ bool check_obstacle_ahead(void)
                     if(check_obstacle_ahead())
                     {
                         printf("Obstacle detected at cell (%d, %d)\n", robot_pos_x, robot_pos_y);
+                        map_led_location(robot_pos_x,robot_pos_y-1);
                         return_to_base();
                         return;
                     }
@@ -267,6 +270,7 @@ bool check_obstacle_ahead(void)
                     if(check_obstacle_ahead())
                     {
                         printf("Obstacle detected at cell (%d, %d)\n", robot_pos_x, robot_pos_y);
+                        map_led_location(robot_pos_x-1,robot_pos_y);
                         return_to_base();
                         return;
                     }

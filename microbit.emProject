@@ -71,6 +71,8 @@
       <file file_name="sonar.h" />
       <file file_name="robot_conf.c" />
       <file file_name="robot_conf.h" />
+      <file file_name="map_led.h" />
+      <file file_name="map_led.c" />
     </folder>
     <folder Name="System Files">
       <file file_name="../common/system/nRF/Source/nrf52833_Vectors.s">

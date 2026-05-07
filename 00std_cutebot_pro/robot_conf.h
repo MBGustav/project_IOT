@@ -8,7 +8,7 @@
 #include "i2c_cmd.h" //i2c cmds
 
 
-#define MAP_GRID_SIZE (3) // GRID_SIZE x GRID_SIZE
+#define MAP_GRID_SIZE (5) // GRID_SIZE x GRID_SIZE
 #define  CELL_CM (10)
 #define SAFE_OBSTACLE_THRESHOLD (10)
 
