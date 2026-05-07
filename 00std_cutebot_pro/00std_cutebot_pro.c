@@ -4,6 +4,7 @@
 #include "i2c_cmd.h"
 #include "sonar.h"
 #include "robot_conf.h"
+#include "map_led.h"
 
 
 /*
@@ -20,19 +21,25 @@ int main(void)
 {
     i2c_init();
     sonar_init();
+    led_init();
+    map_led_location(2,2);
+    delay_ms(1000);
     map_init();
-    
+
+    clear_leds();
+
     while(1)
     {
         // button to start exploration
         printf("Exploring grid...\n");
-        explore_grid();  
+    
+        clear_leds();
+        explore_grid(); 
         
-        //int dist = (int)get_sonar_distance_cm();
-        //printf("Distance: %d cm\n", dist);
-        //delay_ms(1000);
-        delay_ms(10000);
+        int dist = (int)get_sonar_distance_cm();
+        printf("Distance: %d cm\n", dist);
+        delay_ms(1000);
+//        delay_ms(10000);
     }  
     
 }
-
